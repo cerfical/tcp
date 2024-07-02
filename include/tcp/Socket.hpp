@@ -1,8 +1,5 @@
 #pragma once
 
-#include "IpAddr.hpp"
-
-#include <cstdint>
 #include <memory>
 
 namespace tcp {
@@ -19,14 +16,16 @@ namespace tcp {
         ~Socket() = default;
 
 
-        Socket() noexcept = default;
+        Socket();
 
-        Socket(IpAddr addr, std::uint16_t port);
+        explicit Socket(int handle) noexcept
+            : sock_(handle) {}
 
 
-        void write(std::string_view data);
-
-        auto read() -> std::string;
+        [[nodiscard]]
+        auto handle() const noexcept -> int {
+            return sock_.get().value;
+        }
 
 
     private:
