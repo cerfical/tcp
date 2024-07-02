@@ -19,8 +19,8 @@ namespace tcp {
         ~ClientSocket() = default;
 
 
-        ClientSocket() noexcept
-            : sock_(0) {}
+        explicit ClientSocket(int handle = 0) noexcept
+            : sock_(handle) {}
 
         ClientSocket(IpAddr addr, std::uint16_t port);
 

@@ -1,0 +1,5 @@
+InheritParentConfig: true
+Checks:
+  # Needed for communication with Linux C API
+  - -cppcoreguidelines-pro-type-reinterpret-cast
+  - -cppcoreguidelines-pro-type-vararg
