@@ -22,12 +22,15 @@ target_sources(tcp
     INTERFACE FILE_SET HEADERS BASE_DIRS "include" FILES
         "include/tcp/Socket.hpp"
         "include/tcp/ClientSocket.hpp"
+        "include/tcp/ServerSocket.hpp"
         "include/tcp/IpAddr.hpp"
 
     PRIVATE
         "src/linux/Socket.cpp"
         "src/linux/ClientSocket.cpp"
+        "src/linux/ServerSocket.cpp"
         "src/linux/errors.hpp"
+        "src/linux/util.hpp"
 )
 
 
