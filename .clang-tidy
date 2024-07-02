@@ -40,6 +40,10 @@ CheckOptions:
   readability-identifier-naming.MacroDefinitionCase: UPPER_CASE
   readability-identifier-naming.NamespaceCase: lower_case
 
+  # `ch` for an arbitrary character
+  readability-identifier-length.IgnoredParameterNames: "ch|ip"
+  readability-identifier-length.IgnoredVariableNames: "ch|ip"
+
 
   # For simple C struct-like types
   misc-non-private-member-variables-in-classes.IgnoreClassesWithAllMemberVariablesBeingPublic: true

@@ -103,7 +103,5 @@ IncludeCategories:
   - { Regex: '".*"', Priority: 1 }
 
   # System includes
-  - { Regex: '<tcp/.*>', Priority: 10 }
-  - { Regex: '<.*/.*>', Priority: 11 }
-  - { Regex: '<.*(\.h|\.hpp)>', Priority: 12 }
-  - { Regex: '<.*>', Priority: 13 }
+  - { Regex: '<.*(\.h|\.hpp)>', Priority: 10 }
+  - { Regex: '<.*>', Priority: 11 }

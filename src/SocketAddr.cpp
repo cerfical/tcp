@@ -24,8 +24,8 @@ namespace tcp {
         auto parseInt(std::string_view str) noexcept -> std::pair<Int, std::errc> {
             std::pair<Int, std::errc> res = {};
 
-            const auto& [last, ec] = std::from_chars(str.begin(), str.end(), res.first);
-            res.second = (last != str.end()) ? std::errc::invalid_argument : ec;
+            const auto& [last, err] = std::from_chars(str.begin(), str.end(), res.first);
+            res.second = (last != str.end()) ? std::errc::invalid_argument : err;
 
             return res;
         }
@@ -37,8 +37,8 @@ namespace tcp {
                 return DefaultPort;
             }
 
-            const auto& [value, ec] = parseInt<std::uint16_t>(port);
-            switch(ec) {
+            const auto& [value, err] = parseInt<std::uint16_t>(port);
+            switch(err) {
                 case std::errc::invalid_argument: {
                     throw std::runtime_error("invalid format for port number");
                 }
@@ -52,8 +52,8 @@ namespace tcp {
         }
 
         auto parseOctet(std::string_view oct) -> std::uint8_t {
-            const auto& [value, ec] = parseInt<std::uint8_t>(oct);
-            switch(ec) {
+            const auto& [value, err] = parseInt<std::uint8_t>(oct);
+            switch(err) {
                 case std::errc::invalid_argument: {
                     throw std::runtime_error("invalid format for IP address octets");
                 }
