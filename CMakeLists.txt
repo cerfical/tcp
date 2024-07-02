@@ -37,9 +37,7 @@ target_sources(tcp
 )
 
 
-add_subdirectory(app/tcp-client)
-
-add_subdirectory(app/tcp-server)
+add_subdirectory(app)
 
 
 # Generate .gitignore file to take care of the build directory automatically
