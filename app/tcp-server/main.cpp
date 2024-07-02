@@ -1,5 +1,1 @@
-#include <tcp/tcp.hpp>
-
-int main() {
-
-}
+auto main() noexcept -> int {}
