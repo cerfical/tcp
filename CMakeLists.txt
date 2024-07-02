@@ -21,3 +21,9 @@ target_compile_features(tcp INTERFACE cxx_std_20)
 
 add_subdirectory(app/tcp-client)
 add_subdirectory(app/tcp-server)
+
+
+# Generate .gitignore file to take care of the build directory automatically
+file(WRITE "${CMAKE_BINARY_DIR}/.gitignore" [[
+*
+]])
