@@ -24,6 +24,11 @@ namespace tcp {
         Socket(IpAddr addr, std::uint16_t port);
 
 
+        void write(std::string_view data);
+
+        auto read() -> std::string;
+
+
     private:
         struct SocketHandle {
 
