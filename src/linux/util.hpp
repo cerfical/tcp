@@ -1,6 +1,6 @@
 #pragma once
 
-#include "IpAddr.hpp"
+#include "SocketAddr.hpp"
 #include "errors.hpp"
 
 #include <arpa/inet.h>
@@ -18,11 +18,11 @@ namespace tcp {
         return inAddr.s_addr;
     }
 
-    inline auto makeSockAddr(IpAddr addr, std::uint16_t port) -> sockaddr {
+    inline auto toSockAddr(SocketAddr addr) -> sockaddr {
         const auto sock = sockaddr_in {
             .sin_family = AF_INET,
-            .sin_port = htons(port),
-            .sin_addr = { toNboBinary(addr) },
+            .sin_port = htons(addr.port),
+            .sin_addr = { toNboBinary(addr.ip) },
         };
         return *reinterpret_cast<const sockaddr*>(&sock);
     }

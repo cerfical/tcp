@@ -1,10 +1,8 @@
 #pragma once
 
 #include "ClientSocket.hpp"
-#include "IpAddr.hpp"
 #include "Socket.hpp"
-
-#include <cstdint>
+#include "SocketAddr.hpp"
 
 namespace tcp {
 
@@ -23,7 +21,7 @@ namespace tcp {
         ServerSocket() noexcept
             : sock_(0) {}
 
-        ServerSocket(IpAddr addr, std::uint16_t port);
+        explicit ServerSocket(SocketAddr addr);
 
 
         [[nodiscard]]

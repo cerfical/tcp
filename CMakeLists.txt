@@ -24,6 +24,7 @@ target_sources(tcp
         "include/tcp/ClientSocket.hpp"
         "include/tcp/ServerSocket.hpp"
         "include/tcp/IpAddr.hpp"
+        "include/tcp/SocketAddr.hpp"
 
     PRIVATE
         "src/linux/Socket.cpp"
@@ -31,6 +32,8 @@ target_sources(tcp
         "src/linux/ServerSocket.cpp"
         "src/linux/errors.hpp"
         "src/linux/util.hpp"
+
+        "src/SocketAddr.cpp"
 )
 
 

@@ -21,8 +21,8 @@ namespace tcp {
     }
 
 
-    ClientSocket::ClientSocket(IpAddr addr, std::uint16_t port) {
-        const auto sockaddr = makeSockAddr(addr, port);
+    ClientSocket::ClientSocket(SocketAddr addr) {
+        const auto sockaddr = toSockAddr(addr);
         sysCallCheck(connect(sock_.handle(), &sockaddr, sizeof(sockaddr)));
     }
 
